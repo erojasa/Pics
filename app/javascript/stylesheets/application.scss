@@ -1,1 +1,26 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+
+$body-bg:                          #fafafa !important;
+$font-family-sans-serif:           'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$primary:                          #3897F0;
+$jumbotron-bg:                     white;
+
 @import '~bootstrap/scss/bootstrap';
+
+.navbar {
+  background-color: #fff;
+  font-weight: bold;
+  height: 77px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.navbar-brand {
+  font-family: 'Oleo Script', cursive;
+  font-size: 25px;
+  color: #262626;
+}
+
+.navbar-nav {
+  font-weight: bold;
+}
