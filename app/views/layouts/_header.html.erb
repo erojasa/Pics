@@ -13,12 +13,15 @@
     <%= link_to "Quiénes somos", about_path, class: "nav-link" %>
   </li>
   <% if user_signed_in? %>
-    <li class="nav-item">
+  <li class="nav-item">
+    <%= link_to 'Nuevo post', new_post_path, class: "nav-link"%>
+  </li>
+  <li class="nav-item">
     <%= link_to "Mi cuenta", edit_user_registration_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Cerrar sesión", destroy_user_session_path, class: "nav-link", method: :delete %>
-    </li>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Cerrar sesión", destroy_user_session_path, class: "nav-link", method: :delete %>
+  </li>
   <% else %>
     <li class="nav-item">
       <%= link_to "Regístrate", new_user_registration_path, class: "nav-link" %>
