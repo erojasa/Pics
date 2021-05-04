@@ -1,9 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="posts-wrapper row">
+  <div class="post">
+    <%= link_to "Editar Post", edit_post_path(@post) %>
+</div>
+    <div class="image center-block">
+      <%= image_tag @post.squared_img, class:'img-responsive' %>
+    </div>
+    <div class="post-head">
+      <div class="name">
+        <%= @post.user.email if @post.user %>
+      </div>
+    </div>
+    <p class="description">
+      <%= @post.description %>
+    </p>
+  </div>
+</div>
