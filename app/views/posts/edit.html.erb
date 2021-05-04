@@ -1,3 +1,7 @@
+<div class="text-center">
+  <%= image_tag @post.squared_img %>
+</div>
+
 <div class="form-wrapper">
   <h2>Actualizar Post</h2>
   <%= render 'form' %>
@@ -5,3 +9,9 @@
 
 <%= link_to 'Show', @post %> |
 <%= link_to 'Back', posts_path %>
+
+<div class="text-center edit-links">
+  <%= link_to "Borrar Post", post_path(@post), method: :delete, data: { confirm: "¿Estás segura que quieres eliminar este post?" } %>
+  |
+  <%= link_to "cancelar", posts_path %>
+</div>

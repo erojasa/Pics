@@ -33,3 +33,50 @@ $jumbotron-bg:                     white;
   border: 1px solid #eeefef;
   border-radius: 3px;
 }
+
+.main-wrapper {
+  margin-top: 100px
+}
+
+.posts-wrapper {
+  padding-top: 40px;
+  margin: 0 auto;
+  max-width: 642px;
+  width: 100%;
+}
+
+.post {
+  background-color: #fff;
+  border-color: #edeeee;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+  margin-bottom: 60px;
+}
+
+.post-head {
+  height: 64px;
+  padding: 14px 20px;
+  color: #125688;
+  font-size: 15px;
+  line-height: 18px;
+  .thumbnail {}
+  .name {
+    display: block;
+  }
+}
+
+.image {
+  padding-bottom: 30px;
+}
+
+.description {
+  padding: 24px 24px;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.edit-links {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
