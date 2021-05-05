@@ -5,7 +5,9 @@ class Post < ApplicationRecord
 
   def squared_img
     if image.attached?
-      image.variant( combine_options: { resize: '600x600^', gravity: 'center', extent: '600x600' })
+      return image.variant( combine_options: { resize: '600x600', gravity: 'center', extent: '600x600' })
     end
+
+    ''
   end
 end

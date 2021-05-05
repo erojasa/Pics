@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to @post, notice: '¡Post creado satisfactoriamente!'
+      redirect_to @post, notice: 'Post successfully created!'
     else
       render :new
     end
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: '¡Post actualizado satisfactoriamente!'
+      redirect_to @post, notice: 'Post updated successfully!'
     else
       render :edit
     end
@@ -55,7 +55,7 @@ class PostsController < ApplicationController
 
     def correct_user
       @post = current_user.posts.find_by(id: params[:id])
-      redirect_to posts_path, notice: "¡No puedes editar este post!" if @post.nil?
+      redirect_to posts_path, notice: "You cannot edit this post!" if @post.nil?
     end
 
     # Only allow a list of trusted parameters through.

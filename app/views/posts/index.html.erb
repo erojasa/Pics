@@ -6,7 +6,9 @@
       <% @posts.each do |post| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="image center-block">
-            <%= link_to (image_tag post.squared_img, class:'img-fluid'), post_path(post) %>
+            <% if post.image.attached? %>
+            <%= link_to (image_tag post.image.variant(resize: '600x600', crop: '600x600+0+0').processed, class:'img-fluid'), post_path(post) %>
+            <% end %>
           </div>
         </div>
       <% end %>
@@ -14,10 +16,10 @@
   </div>
 <% else %>
   <div class="jumbotron text-center">
-   <h1>¡Bienvenidos a Pics!</h1>
+   <h1>¡Welcome to Pics!</h1>
      <p>
-       <%= link_to "Iniciar sesión", new_user_session_path, class: "btn btn-default btn-lg" %>
-       <%= link_to "Regístrate", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+       <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+       <%= link_to "Sign in", new_user_registration_path, class: "btn btn-primary btn-lg" %>
      </p>
   </div>
 <% end %>
