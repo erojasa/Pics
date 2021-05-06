@@ -7,6 +7,7 @@ class RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:account_update, keys: [:email, :name, :password, :password_confirmation, :current_password])
   end
   
+
   # def sign_up_params
   #   params.require(:user).permit(:email, :name, :password, :password_confirmation)
   # end
