@@ -11,7 +11,7 @@
 user = User.first
 
 (1..21).to_a.each do |n|
-  post = Post.new(description: Faker::Lorem.sentences(number: 1, supplemental: true), user: user)
+  post = Post.new(description: Faker::Lorem.sentences(number: 1, supplemental: true).join(''), user: user)
   current_num = n < 10 ? "0#{n}" : n
   post.image.attach(io: File.open("app/assets/images/#{current_num}.jpg"), filename: "#{current_num}.jpg")
 
