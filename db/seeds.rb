@@ -6,9 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# u = User.create(email: 'nada@nada.com', password: '123123')
-
-user = User.first
+# user = User.first
+user = User.create(email: 'nada@nada.com', password: '123123', first_name: 'Erick', last_name: 'Rojas')
 
 (1..21).to_a.each do |n|
   post = Post.new(description: Faker::Lorem.sentences(number: 1, supplemental: true).join(''), user: user)
