@@ -21,6 +21,7 @@
        <%= form_for([@post, @post.comments.build], remote: true) do |f| %>
        <div class="form-group">
         <%= f.text_field :content, placeholder: "Add a comment...", id: "comment_content_#{@post.id}" %>
+        <%= f.submit 'Guardar' %>
        </div>
         <% end %>
         <div class="text-center">
