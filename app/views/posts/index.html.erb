@@ -10,8 +10,10 @@
           </div>
         </div>
       <% end %>
+
     </div>
   </div>
+
 <% else %>
   <div class="jumbotron text-center">
    <h1>¡Welcome to Pics!</h1>
@@ -21,5 +23,24 @@
        <%= link_to "Sign in", new_user_registration_path, class: "btn btn-primary btn-lg" %>
      </p>
   </div>
-   <%= will_paginate @posts %>
 <% end %>
+
+<div class="digg_pagination">
+   <%= will_paginate  @posts,  renderer: BootstrapPagination::Rails %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
