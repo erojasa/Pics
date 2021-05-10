@@ -15,6 +15,7 @@
 <% else %>
   <div class="jumbotron text-center">
    <h1>¡Welcome to Pics!</h1>
+   <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
      <p>
        <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
        <%= link_to "Sign in", new_user_registration_path, class: "btn btn-primary btn-lg" %>

@@ -23,18 +23,32 @@
         <%= f.text_field :content, placeholder: "Add a comment...", id: "comment_content_#{@post.id}" %>
        </div>
         <% end %>
+        <div class="text-center">
+          <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+        </div>
+        <div class="text-center">
+          <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+            <% if pre_like %>
+              <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+            <% else %>
+              <%= button_to 'Like', post_likes_path(@post), method: :post %>
+            <% end %>
+        </div>
+        <div class="container">
+        <p></p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <% if @post.user.id == current_user.id %>
   <div class="text-center edit-links">
-    <%= link_to "Cancelar", posts_path %>
+    <%= link_to "Cancel", posts_path %>
     |
-    <%= link_to "Editar el post", edit_post_path(@post) %>
+    <%= link_to "Edit post", edit_post_path(@post) %>
   </div>
 <% else %>
   <div class="text-center edit-links">
-    <%= link_to "← Volver", posts_path %>
+    <%= link_to "← Back", posts_path %>
   </div>
 <% end %>
