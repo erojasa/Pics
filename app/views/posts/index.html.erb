@@ -1,15 +1,7 @@
 <% if user_signed_in? %>
   <div class="main-wrapper">
     <div class="row">
-      <% @posts.each do |post| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="image center-block">
-            <% if post.image.attached? %>
-            <%= link_to (image_tag post.image.variant(resize: '600x600>').processed, class:'img-fluid'), post_path(post) %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+      <%= render @posts %>
     </div>
   </div>
 <% else %>
@@ -21,22 +13,8 @@
      </p>
   </div>
 <% end %>
+<noscript>
 <div class="digg_pagination">
    <%= will_paginate  @posts,  renderer: BootstrapPagination::Rails %>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</noscript>

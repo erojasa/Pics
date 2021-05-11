@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: %i[:index :show]
-  before_action :correct_user, only: %i[:edit :update :destroy]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :correct_user, only: %i[edit update destroy]
 
   
   def index
-    @posts = Post.all.order("created_at DESC").paginate(page: params[:page], per_page: 6)
+    @posts = Post.all.order("created_at DESC").paginate(page: params[:page], per_page: 12)
   end
 
  
@@ -46,6 +46,17 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to posts_url
+  end
+
+
+  def pages
+    current_page = params[:number].to_i
+    per_page = 12
+    @posts = Post.all.order("created_at DESC").offset(per_page * current_page).limit(per_page)
+
+    respond_to do |format|
+      format.html { render partial: 'pages' }
+    end
   end
 
   private
