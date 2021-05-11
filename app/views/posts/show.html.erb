@@ -21,7 +21,7 @@
        <%= form_for([@post, @post.comments.build], remote: true) do |f| %>
        <div class="form-group">
         <%= f.text_field :content, placeholder: "Add a comment...", id: "comment_content_#{@post.id}" %>
-        <%= f.submit 'Guardar' %>
+        <%= f.submit 'Save' %>
        </div>
         <% end %>
         <div class="text-center">
@@ -44,7 +44,7 @@
 </div>
 <% if @post.user.id == current_user.id %>
   <div class="text-center edit-links">
-    <%= link_to "Cancel", posts_path %>
+    <%= link_to "Back", posts_path %>
     |
     <%= link_to "Edit post", edit_post_path(@post) %>
   </div>

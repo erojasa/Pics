@@ -10,6 +10,44 @@ import "channels"
 import 'bootstrap'
 import '../stylesheets/application'
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+const state = {
+  page: 0
+}
+
+document.addEventListener("turbolinks:load", function() {
+  window.addEventListener('scroll', (e) => {
+    const { scrollHeight, scrollTop, clientHeight } = document.documentElement
+    if(scrollTop + clientHeight > scrollHeight - 5){
+      setTimeout(() => {
+        state.page += 1
+        getPosts()
+      }, 2000)
+    }
+  })
+})
+
+function getPosts(){
+  const container = document.querySelector('.main-wrapper')
+
+  fetch(`/posts/page/${state.page}`, {
+    method: 'GET',
+    headers: {
+        'Accept': 'text/html',
+        "X-CSRF-Token": document.querySelector("[name='csrf-token']").content
+    }
+  })
+  .then(data => data.text())
+  .then(html => {
+
+    const row = document.createElement('div')
+    row.className = 'row'
+    row.innerHTML = html
+    container.appendChild(row)
+  })
+}
