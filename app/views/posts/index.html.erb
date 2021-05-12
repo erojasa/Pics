@@ -1,6 +1,11 @@
 <% if user_signed_in? %>
-<div>
+<div class="main-wrapper">
+<h2 class="text-center">Number of comments per post</h2>
   <%= pie_chart @grafico %>
+</div>
+<div class="main-wrapper">
+<h2 class="text-center">Number of likes per post</h2>
+  <%= pie_chart @graphic %>
 </div>
   <div class="main-wrapper">
     <div class="row">
