@@ -32,7 +32,7 @@ gem 'devise'
 gem 'will_paginate', '~> 3.1.6'
 gem 'will_paginate-bootstrap'
 
-
+gem 'chartkick', '~> 1.4', '>= 1.4.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
