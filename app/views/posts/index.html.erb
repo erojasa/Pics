@@ -1,4 +1,7 @@
 <% if user_signed_in? %>
+<div>
+  <%= pie_chart @grafico %>
+</div>
   <div class="main-wrapper">
     <div class="row">
       <%= render @posts %>

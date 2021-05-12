@@ -64,3 +64,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "faker", "~> 2.17"
 
+gem 'chartkick', '~> 1.4', '>= 1.4.1'

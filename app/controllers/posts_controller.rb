@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all.order("created_at DESC").paginate(page: params[:page], per_page: 12)
+    @grafico = Like.joins(:post).group('posts.name').count
   end
 
  
