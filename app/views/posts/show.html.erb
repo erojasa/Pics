@@ -18,13 +18,16 @@
         <span class="glyphicon glyphicon-heart-empty"></span>
       </div>
       <div class="comment-form col-sm-11">
+      <% if user_signed_in? %>
        <%= form_for([@post, @post.comments.build], remote: true) do |f| %>
        <div class="form-group">
         <%= f.text_field :content, placeholder: "Add a comment...", id: "comment_content_#{@post.id}" %>
         <%= f.submit 'Save' %>
        </div>
         <% end %>
+      <% end %>
         <div class="text-center">
+        <% if user_signed_in? %>
           <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
         </div>
         <div class="text-center">
@@ -35,12 +38,15 @@
               <%= button_to 'Like', post_likes_path(@post), method: :post %>
             <% end %>
         </div>
+        <% end %>
 
       </div>
   <div class="text-center edit-links">
     <%= link_to "Back", posts_path %>
+    <% if user_signed_in? %>
     |
     <%= link_to "Edit post", edit_post_path(@post) %>
+    <% end %>
   </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :authenticate_user!, except: %i[index show pages]
   before_action :correct_user, only: %i[edit update destroy]
 
   
@@ -55,7 +55,11 @@ class PostsController < ApplicationController
     @posts = Post.all.order("created_at DESC").offset(per_page * current_page).limit(per_page)
 
     respond_to do |format|
-      format.html { render partial: 'pages' }
+      if user_signed_in?
+        format.html { render partial: 'pages' }
+      else
+        format.html { render partial: '404' }
+      end
     end
   end
 
