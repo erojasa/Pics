@@ -12,7 +12,9 @@
        <%= link_to "Sign in", new_user_registration_path, class: "btn btn-primary btn-lg" %>
      </p>
   </div>
-  <%= render @posts %>
+  <div class="row">
+    <%= render @posts %>
+  </div>
 <% end %>
 <noscript>
 <div class="digg_pagination">

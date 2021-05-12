@@ -44,10 +44,12 @@ function getPosts(){
   })
   .then(data => data.text())
   .then(html => {
-
-    const row = document.createElement('div')
-    row.className = 'row'
-    row.innerHTML = html
-    container.appendChild(row)
+    if (html !== '') {
+      const row = document.createElement('div')
+      row.className = 'row'
+      row.innerHTML = html
+      container.appendChild(row)
+    }
   })
+  .catch(console.error)
 }
