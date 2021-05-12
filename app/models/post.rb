@@ -6,6 +6,6 @@ class Post < ApplicationRecord
   validates :image, presence: true
 
   def squared_img
-    image.attached? ? image.variant( resize: '600x600', crop: "600x600+0+0", gravity: 'center', extent: '600x600' ).processed : ''
+    image.attached? ? image.variant( resize: '600x600', crop: "600x600+0+0", gravity: 'center', extent: '600x600' ) : ''
   end
 end
