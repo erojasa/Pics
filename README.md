@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**INTRODUCCIÓN**
 
-Things you may want to cover:
+Esta aplicación tiene como objetivo desarrollar una red social
+por medio de las fotos de lugares que visitan los usuarios
+alrededor del mundo.
 
-* Ruby version
 
-* System dependencies
+**REQUISITOS MÍNIMOS**
 
-* Configuration
+Cuenta con una version de ruby '2.7.2' y creada en una base de datos
+postgresql 1.1. Para inializarla debemos de correr el archivo seed
+previamente cargado con datos.
 
-* Database creation
+**DEPLOYMENT**
 
-* Database initialization
+Para el deployment de la app se contó con el servicio de Heroku
+y las imágenes se encuentran almacenadas en AWS.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+*** UN AGRADECIMIENTO ENORME A MI PROFESOR CRISTOBAL DOMINGUEZ QUE NO
+ TUVO REPAROS EN BRINDARME SU AYUDA EN ESTE PROYECTO Y EN MI APRENDIZAJE **
