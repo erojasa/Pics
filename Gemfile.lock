@@ -115,6 +115,8 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.3-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.11.3-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
     public_suffix (4.0.6)
@@ -222,6 +224,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
@@ -244,10 +247,8 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
-
   will_paginate (~> 3.1.6)
   will_paginate-bootstrap
-
 
 RUBY VERSION
    ruby 2.7.2p137
