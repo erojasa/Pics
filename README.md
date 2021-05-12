@@ -18,6 +18,7 @@ previamente cargado con datos.
 Para el deployment de la app se contó con el servicio de Heroku
 y las imágenes se encuentran almacenadas en AWS.
 
+dirección web: https://picsforyou.herokuapp.com/
 
 
 *** UN AGRADECIMIENTO ENORME A MI PROFESOR CRISTOBAL DOMINGUEZ QUE NO
